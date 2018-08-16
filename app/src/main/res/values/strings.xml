@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RxSearch</string>
+    <string name="enterText">Enter product name</string>
+</resources>
