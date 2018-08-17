@@ -29,13 +29,13 @@ public class MainActivity extends AppCompatActivity {
         helper.getProductsFromAPI(new NetworkResponseListener<List<Product>>() {
             @Override
             public void onSuccess(List<Product> callback) {
-                Timber.i(callback.get(2).getName());
+                Timber.i(callback.get(4).getName());
             }
 
             @Override
             public void onFailure(Throwable throwable) {
                 Timber.e(throwable.toString());
             }
-        }, "lo");
+        }, "lon");
     }
 }
