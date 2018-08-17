@@ -1,5 +1,6 @@
 package com.example.vsharko.rxsearch.networking.networkingDI;
 
+import com.example.vsharko.rxsearch.networking.helper.NetworkingHelper;
 import com.example.vsharko.rxsearch.networking.helper.NetworkingHelperImpl;
 import com.example.vsharko.rxsearch.networking.Service;
 import com.example.vsharko.rxsearch.utils.Constants;
@@ -14,7 +15,7 @@ public class NetworkModule {
 
 
     @Provides
-    public NetworkingHelperImpl provideNetworkingHelper(Service service){
+    public NetworkingHelper provideNetworkingHelper(Service service){
         return new NetworkingHelperImpl(service);
     }
 

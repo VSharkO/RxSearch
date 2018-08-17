@@ -12,9 +12,7 @@ public class App extends Application{
         super.onCreate();
         sInstance = this;
         Timber.plant(new Timber.DebugTree());
-//        mAppComponent = DaggerAppComponent.builder()
-//                .repositoryModule(new RepositoryModule(this))
-//                .build();
+        mAppComponent = DaggerAppComponent.builder().build();
     }
 
     public static App getInstance() {

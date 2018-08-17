@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.vsharko.rxsearch.App;
 import com.example.vsharko.rxsearch.R;
 import com.example.vsharko.rxsearch.model.Product;
 import com.example.vsharko.rxsearch.networking.helper.NetworkingHelper;
@@ -24,19 +25,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        DaggerfakeMainComponent.create()
-                .inject(this);
-
-
+        NetworkingHelper helper = App.getInstance().getAppComponent().injectNetworkingHelper();
         helper.getProductsFromAPI(new NetworkResponseListener<List<Product>>() {
             @Override
             public void onSuccess(List<Product> callback) {
-                Log.i("DADA",callback.get(2).getName());
+                Timber.i(callback.get(2).getName());
             }
 
             @Override
             public void onFailure(Throwable throwable) {
-                Log.e("NE",throwable.toString());
+                Timber.e(throwable.toString());
             }
         }, "lo");
     }
