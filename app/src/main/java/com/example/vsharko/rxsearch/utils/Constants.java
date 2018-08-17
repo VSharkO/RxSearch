@@ -7,5 +7,4 @@ public class Constants {
     public static String FORMAT = "xmlconnect";
     public final static String REQUEST_TYPE = "catalogsearch";
     public final static String ACTION = "autocomplete";
-    public final static String SEARCH = "da";
 }
