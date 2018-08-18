@@ -1,4 +1,4 @@
-package com.example.vsharko.rxsearch.Scopes;
+package com.example.vsharko.rxsearch.scopes;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
