@@ -1,7 +1,10 @@
 package com.example.vsharko.rxsearch.ui.DI;
 
+import com.example.vsharko.rxsearch.Scopes.PerActivity;
 import com.example.vsharko.rxsearch.ui.view.MainActivity;
 import com.example.vsharko.rxsearch.ui.view.MainActivityView;
+
+import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -15,6 +18,7 @@ public class MainActivityModule {
         mMainActivity = mainActivity;
     }
 
+    @PerActivity
     @Provides
     public MainActivityView provideMainActivity(){
         return mMainActivity;

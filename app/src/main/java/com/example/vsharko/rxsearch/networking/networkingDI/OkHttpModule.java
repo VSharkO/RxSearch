@@ -17,6 +17,7 @@ import timber.log.Timber;
 @Module
 public class OkHttpModule {
 
+    @Singleton
     @Provides
     public OkHttpClient provideOkHttpClient(Interceptor interceptor, HttpLoggingInterceptor logging){
         OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient.Builder().addInterceptor(interceptor);
@@ -25,8 +26,7 @@ public class OkHttpModule {
         }
         return okHttpClientBuilder.build();
     }
-
-
+    @Singleton
     @Provides
     public Interceptor provideInterceptor() {
         Interceptor interceptor = new Interceptor(){
@@ -40,7 +40,6 @@ public class OkHttpModule {
                         .addPathSegments(Constants.FORMAT)
                         .addPathSegments(Constants.REQUEST_TYPE)
                         .addPathSegments(Constants.ACTION)
-                        .addQueryParameter("q", original.url().queryParameterValue(0))
                         .build();
 
                 Request.Builder requestBuilder = original.newBuilder().url(newHttpUrl);
@@ -51,14 +50,10 @@ public class OkHttpModule {
         return interceptor;
     }
 
+    @Singleton
     @Provides
     public HttpLoggingInterceptor provideLogging() {
-        HttpLoggingInterceptor.Logger logger = new HttpLoggingInterceptor.Logger() {
-            @Override
-            public void log(String message) {
-                Timber.d(message);
-            }
-        };
+        HttpLoggingInterceptor.Logger logger = message -> Timber.d(message);
 
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor(logger);
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);

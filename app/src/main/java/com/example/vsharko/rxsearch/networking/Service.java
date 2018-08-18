@@ -7,5 +7,5 @@ import retrofit2.http.Query;
 
 public interface Service {
     @POST("/")
-    Call<Products> getProducts(@Query("search") String search);
+    Call<Products> getProducts(@Query("q") String search);
 }

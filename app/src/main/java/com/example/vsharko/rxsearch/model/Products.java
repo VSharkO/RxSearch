@@ -16,6 +16,7 @@ public class Products {
     private Config mConfig;
 
     //getters and setters
+
     public ArrayList<Product> getProductArrayList() {
         return mProductArrayList;
     }

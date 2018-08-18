@@ -20,7 +20,6 @@ public class NetworkingHelperImpl implements NetworkingHelper {
         mService = service;
     }
 
-
     @Override
     public void getProductsFromAPI(final NetworkResponseListener<List<Product>> listener,String search) {
         mService.getProducts(search).enqueue(new Callback<Products>() {

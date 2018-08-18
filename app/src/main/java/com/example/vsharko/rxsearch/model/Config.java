@@ -6,11 +6,9 @@ import io.reactivex.annotations.Nullable;
 
 public class Config {
 
-    @Nullable
     @Element(name = "customer_id", required = false)
     private String customer_id;
     @Element(name = "firstname", required = false)
-    @Nullable
     private String firstname;
     @Element(name = "currency")
     private String currency;

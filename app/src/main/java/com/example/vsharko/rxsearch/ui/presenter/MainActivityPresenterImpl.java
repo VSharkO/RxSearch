@@ -20,6 +20,7 @@ public class MainActivityPresenterImpl implements MainActivityPresenter {
 
     @Override
     public void sendRequest(String searchText){
+
         mHelper.getProductsFromAPI(new NetworkResponseListener<List<Product>>() {
 
             @Override
