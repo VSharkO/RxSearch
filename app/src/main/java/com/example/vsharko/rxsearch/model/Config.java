@@ -18,6 +18,8 @@ public class Config {
     private String language;
     @Element(name = "country")
     private String country;
+    @Element(name = "native_checkout")
+    private String native_checkout;
     @Element(name = "cart_summary_qty")
     private String cart_summary_qty;
     @Element(name = "app_icon")
@@ -60,6 +62,10 @@ public class Config {
         return delay_delivery_time;
     }
 
+    public String getNative_checkout() {
+        return native_checkout;
+    }
+
     // Setter Methods
 
 
@@ -93,5 +99,9 @@ public class Config {
 
     public void setDelay_delivery_time(String delay_delivery_time) {
         this.delay_delivery_time = delay_delivery_time;
+    }
+
+    public void setNative_checkout(String native_checkout) {
+        this.native_checkout = native_checkout;
     }
 }
