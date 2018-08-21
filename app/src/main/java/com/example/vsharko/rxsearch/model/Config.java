@@ -2,27 +2,25 @@ package com.example.vsharko.rxsearch.model;
 
 import org.simpleframework.xml.Element;
 
-import io.reactivex.annotations.Nullable;
-
 public class Config {
 
     @Element(name = "customer_id", required = false)
     private String customer_id;
     @Element(name = "firstname", required = false)
     private String firstname;
-    @Element(name = "currency")
+    @Element(name = "currency" , required = false)
     private String currency;
-    @Element(name = "language")
+    @Element(name = "language" , required = false)
     private String language;
-    @Element(name = "country")
+    @Element(name = "country" , required = false)
     private String country;
-    @Element(name = "native_checkout")
+    @Element(name = "native_checkout" ,required = false)
     private String native_checkout;
-    @Element(name = "cart_summary_qty")
+    @Element(name = "cart_summary_qty" , required = false)
     private String cart_summary_qty;
-    @Element(name = "app_icon")
+    @Element(name = "app_icon" , required = false)
     private String app_icon;
-    @Element(name = "delay_delivery_time")
+    @Element(name = "delay_delivery_time" , required = false)
     private String delay_delivery_time;
 
 // Getter Methods

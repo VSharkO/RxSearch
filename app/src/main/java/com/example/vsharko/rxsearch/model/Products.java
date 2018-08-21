@@ -12,7 +12,8 @@ public class Products {
     @ElementList(name = "results")
     private ArrayList<Product> mProductArrayList;
 
-    @Element(name = "config")
+
+    @Element(name = "config" ,required = false)
     private Config mConfig;
 
     //getters and setters
